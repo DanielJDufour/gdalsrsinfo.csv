@@ -1,0 +1,33 @@
+name: build-main
+run-name: build-main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  perf:
+    runs-on: ubuntu-latest
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      contents: write
+    name: build csv
+    steps:
+      - uses: actions/checkout
+      - uses: actions/setup-python
+      - run: pip install -r requirements.txt
+
+      # install gdal
+      - run: sudo apt-add-repository ppa:ubuntugis/ubuntugis-unstable
+      - run: sudo apt-get update
+      - run: sudo apt-get install gdal-bin libgdal-dev
+
+      - run: python3 build.py
+
+      - run: python3 -m unittest
+
+      - run: zip gdalsrsinfo.csv.zip gdalsrsinfo.csv
+
+      # Commit all changed files back to the repository
+      - uses: stefanzweifel/git-auto-commit-action@v4

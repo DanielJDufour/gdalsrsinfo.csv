@@ -41,6 +41,14 @@ print("output_types:", output_types)
 fieldnames = sorted(list(output_types))
 print("fieldnames:", fieldnames)
 
+# write sample of first 10 rows
+with open("sample.csv", "w") as f:
+  writer = DictWriter(f, delimiter="\t", fieldnames=fieldnames, quoting=QUOTE_ALL)
+  writer.writeheader()
+  writer.writerows(rows[:10])
+print("wrote sample csv")
+
+# write full csv
 with open("gdalsrsinfo.csv", "w") as f:
   writer = DictWriter(f, delimiter="\t", fieldnames=fieldnames, quoting=QUOTE_ALL)
   writer.writeheader()

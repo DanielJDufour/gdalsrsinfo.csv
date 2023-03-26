@@ -9,7 +9,7 @@ end = 32767
 for i in range(start, end + 1):
   try:
     row = {}
-    out = check_output(f"OSR_USE_NON_DEPRECATED=NO gdalsrsinfo -o all EPSG:{i}", shell=True, stderr=DEVNULL)
+    out = check_output(f"OSR_USE_NON_DEPRECATED=NO gdalsrsinfo -o all --single-line EPSG:{i}", shell=True, stderr=DEVNULL)
 
     text = out.decode("utf-8").strip()
 

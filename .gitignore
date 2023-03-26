@@ -104,3 +104,4 @@ dist
 .tern-port
 
 gdalsrsinfo.csv
+__pycache__

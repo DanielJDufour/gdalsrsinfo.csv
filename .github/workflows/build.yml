@@ -3,7 +3,7 @@ run-name: build-main
 on: [push]
 
 jobs:
-  perf:
+  build:
     runs-on: ubuntu-latest
     name: build csv
     steps:

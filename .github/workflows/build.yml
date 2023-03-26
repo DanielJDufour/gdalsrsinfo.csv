@@ -1,6 +1,12 @@
 name: build-main
 run-name: build-main
-on: [push]
+on: 
+  push:
+    branches:
+      - main  
+  schedule:
+    # every month
+    - cron: 0 0 1 * *
 
 jobs:
   build:

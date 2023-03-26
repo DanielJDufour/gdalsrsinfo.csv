@@ -29,7 +29,7 @@ for i in range(start, end + 1):
       rows.append(row)
 
   except Exception as e:
-    print(e)
+    pass
 
 # collect all output types
 output_types = set()

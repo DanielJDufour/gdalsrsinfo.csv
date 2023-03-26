@@ -5,7 +5,8 @@
 [gdalsrsinfo.csv.zip](https://raw.githubusercontent.com/DanielJDufour/gdalsrsinfo.csv/main/gdalsrsinfo.csv.zip)
 
 ## sample
-coming soon
+first 10 lines  
+[sample.csv](https://github.com/DanielJDufour/gdalsrsinfo.csv/blob/main/sample.csv)
 
 ## how does it work?
 Iterate through the valid range of EPSG codes,
